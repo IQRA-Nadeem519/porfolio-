@@ -1,0 +1,256 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="logo">Iqra Nadeem</a>
+            
+            
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skill">Skills</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+                
+                    <!-- <object data="C:\Users\PMLS\Desktop\profolio\Purple and White Clean and Professional Resume (2).pdf" data="application/pdf"
+                     widht="500px" height="350px"> -->
+                <a href="{{url_for('show_pdf')}}" target="_blank" class="resume-btn">Resume</a>
+            
+            </div>
+        </div>
+    </nav>
+    <section id="home">
+    <header>
+        <div class="header-container">
+            <div class="header-text">
+                <h1>Python Developer</h1>
+                <p class="tagline">Full-Stack Development & Data Science Specialist</p>
+                <p class="description">
+                    Experienced Python developer with 2+ years of expertise in building scalable web applications, 
+                    RESTful APIs, and data-driven solutions. Proficient in Django, Flask, Pandas, and machine learning 
+                    technologies. Passionate about creating efficient, maintainable code and solving complex problems 
+                    through innovative programming solutions.
+                </p>
+                <a href="#contact" class="cta-button">Hire Me</a>
+            </div>
+            <div class="profile-image">
+                <img src="{{ url_for('static',filename='anime.png')}}" alt="Python Developer" class="profile-pic">
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+    <section class="skills-section" id="skill">
+        <div class="skills-container">
+            <h1>Skills & Technologies</h1>
+            <div class="skills-grid">
+                
+                <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                </div>
+    
+                <!-- Flask -->
+                <div class="skill-item">
+                    <i class="fas fa-flask"></i>
+                    <h3>Flask</h3>
+                </div>
+    
+                <!-- Web Scraping -->
+                <div class="skill-item">
+                    <i class="fas fa-spider"></i>
+                    <h3>Web Scraping</h3>
+                </div>
+    
+                <!-- Automation -->
+                <div class="skill-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automation</h3>
+                </div>
+    
+                <!-- HTML -->
+                <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+    
+                <!-- CSS -->
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+    
+                <!-- Git -->
+                <div class="skill-item">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Git</h3>
+                </div>
+    
+                <!-- GitHub -->
+                <div class="skill-item">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                </div>
+    
+                <!-- Bootstrap -->
+                <div class="skill-item">
+                    <i class="fab fa-bootstrap"></i>
+                    <h3>Bootstrap</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Science</h3>
+                </div>
+    
+                <!-- Scripting -->
+                <div class="skill-item">
+                    <i class="fas fa-terminal"></i>
+                    <h3>Scripting</h3>
+                </div>
+    
+                <!-- Machine Learning -->
+                <div class="skill-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    <section class="projects-section" id="work">
+        <div class="projects-container">
+            <h1>My Projects</h1>
+            <div class="projects-grid">
+                <!-- src="{{ url_for('static',filename='anime.png')}}" -->
+                <!-- Project 1: Tic Tac Toe -->
+                <div class="project-card">
+                    <img src="{{url_for('static',filename='tic-tac-toe.png')}}" alt="Tic Tac Toe Game">
+                    <div class="project-content">
+                        <h3>Tic Tac Toe Game</h3>
+                        <p>Classic console-based game implementing game logic and user input validation</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Scripting</span>
+                        </div>
+                        <a href="#" class="github-link">GitHub</a>
+                    </div>
+                </div>
+    
+                <!-- Project 2: Job Scraper -->
+                <div class="project-card">
+                    <img src="{{url_for('static',filename='web-scraping.jpg')}}" alt="Job Scraper">
+                    <div class="project-content">
+                        <h3>Job Scraper & Notifier</h3>
+                        <p>Automated job scraping system that logs into NTS and sends email alerts for relevant positions</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>BeautifulSoup</span>
+                            <span>SMTP</span>
+                        </div>
+                        <a href="#" class="github-link">GitHub</a>
+                    </div>
+                </div>
+    
+                <!-- Project 3: E-commerce Website -->
+                <div class="project-card">
+                    <img src="{{url_for('static',filename='outfitter.png')}}"alt="Outfiiter E-commerce">
+                    <div class="project-content">
+                        <h3>Outfiiter E-commerce</h3>
+                        <p>Full-stack fashion e-commerce platform with user authentication and payment integration</p>
+                        <div class="tech-stack">
+                            <span>Flask</span>
+                            <span>HTML/CSS</span>
+                            <span>SQLite</span>
+                        </div>
+                        <a href="#" class="github-link">GitHub</a>
+                    </div>
+                </div>
+    
+                <!-- Project 4: Coffee Machine -->
+                <div class="project-card">
+                    <img src="{{url_for('static',filename='coffee-machine.jpg')}}" alt="Coffee Machine">
+                    <div class="project-content">
+                        <h3>Coffee Machine System</h3>
+                        <p>OOP-based simulation of commercial coffee machine operations and resource management</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>OOP</span>
+                        </div>
+                        <a href="#" class="github-link">GitHub</a>
+                    </div>
+                </div>
+    
+                <!-- Project 5: Email Automation -->
+                <div class="project-card">
+                    <img src="{{url_for('static',filename='automation.jpg')}}" alt="Email Automation">
+                    <div class="project-content">
+                        <h3>CSC Scholarship Auto-Email</h3>
+                        <p>Automated system sending personalized emails to Chinese professors for scholarship applications</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Automation</span>
+                            <span>SMTP</span>
+                        </div>
+                        <a href="#" class="github-link">GitHub</a>
+                    </div>
+                </div>
+    
+                <!-- Project 6: House Price Prediction -->
+                <div class="project-card">
+                    <img src="{{url_for('static',filename='house.jpg')}}" alt="House Price Prediction">
+                    <div class="project-content">
+                        <h3>House Price Prediction</h3>
+                        <p>Linear regression model predicting house prices based on location and features</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Scikit-learn</span>
+                        </div>
+                        <a href="#" class="github-link">GitHub</a>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <h1>Get In Touch</h1>
+                
+                <div class="contact-content">
+                    <!-- Email Section -->
+                    <div class="email-box">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:your.email@example.com" class="email-link">iqranadeem519@example.com</a>
+                    </div>
+        
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/iqra-nadeem-64ab34357/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/IQRA-Nadeem519" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/yourhandle" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    {% block content %}{% endblock %}
+</body>
+</html>
